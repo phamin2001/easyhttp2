@@ -1,11 +1,23 @@
+
+
 class EasyHTTP {
   // Make an HTTP GET Request
   get(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
-        .then(res => res.json())
-        .then(data => resolve(data))
+        .then(res => {
+          if (res.ok) {
+            resolve(res.json());
+          } else {
+            throw Error(
+              `Something went wrong, status: ${res.status} message: ${res.statusText}`
+            );
+          }
+        })
         .catch(err => reject(err));
+      // .then(res => res.json())
+      // .then(data => resolve(data))
+      // .catch(err => reject(err));
     });
   }
 
@@ -19,9 +31,19 @@ class EasyHTTP {
         },
         body: JSON.stringify(data)
       })
-        .then(res => res.json())
-        .then(data => resolve(data))
+        .then(res => {
+          if (res.ok) {
+            resolve(res.json());
+          } else {
+            throw Error(
+              `Something went wrong, status: ${res.status} message: ${res.statusText}`
+            );
+          }
+        })
         .catch(err => reject(err));
+      // .then(res => res.json())
+      // .then(data => resolve(data))
+      // .catch(err => reject(err));
     });
   }
 
@@ -35,9 +57,19 @@ class EasyHTTP {
         },
         body: JSON.stringify(data)
       })
-        .then(res => res.json())
-        .then(data => resolve(data))
+        .then(res => {
+          if (res.ok) {
+            resolve(res.json());
+          } else {
+            throw Error(
+              `Something went wrong, status: ${res.status} message: ${res.statusText}`
+            );
+          }
+        })
         .catch(err => reject(err));
+      // .then(res => res.json())
+      // .then(data => resolve(data))
+      // .catch(err => reject(err));
     });
   }
 
@@ -50,9 +82,19 @@ class EasyHTTP {
           'Content-Type': 'application/json'
         }
       })
-        .then(res => res.json())
-        .then(() => resolve('Resource Deleted... '))
+        .then(res => {
+          if (res.ok) {
+            resolve('Data deleted...');
+          } else {
+            throw Error(
+              `Something went wrong, status: ${res.status} message: ${res.statusText}`
+            );
+          }
+        })
         .catch(err => reject(err));
+      // .then(res => res.json())
+      // .then(() => resolve('Resource Deleted... '))
+      // .catch(err => reject(err));
     });
   }
 }
