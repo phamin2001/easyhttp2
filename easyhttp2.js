@@ -9,7 +9,7 @@ class EasyHTTP {
           if (res.ok) {
             resolve(res.json());
           } else {
-            throw Error(
+            throw new Error(
               `Something went wrong, status: ${res.status} message: ${res.statusText}`
             );
           }
@@ -35,7 +35,7 @@ class EasyHTTP {
           if (res.ok) {
             resolve(res.json());
           } else {
-            throw Error(
+            throw new Error(
               `Something went wrong, status: ${res.status} message: ${res.statusText}`
             );
           }
@@ -86,7 +86,7 @@ class EasyHTTP {
           if (res.ok) {
             resolve('Data deleted...');
           } else {
-            throw Error(
+            throw new Error(
               `Something went wrong, status: ${res.status} message: ${res.statusText}`
             );
           }

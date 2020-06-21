@@ -1,9 +1,9 @@
 const http = new EasyHTTP();
 
 // Get Users
-// const users = http.get('https://jsonplaceholder.typicode.com/users')
-//   .then(data => console.log(data))
-//   .catch(error => console.log(err));
+http.get('https://jsonplaceholder.typicode.com/usersp')
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
 
 // User Data
 const data = {
@@ -13,10 +13,10 @@ const data = {
 };
 
 // Create User
-http
-  .post('https://jsonplaceholder.typicode.com/users', data)
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+// http
+//   .post('https://jsonplaceholder.typicode.com/users', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
 
 // Update User
 // http
